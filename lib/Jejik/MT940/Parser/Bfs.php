@@ -17,7 +17,7 @@ namespace Jejik\MT940\Parser;
  *
  * @author Sander Marechal <s.marechal@jejik.com>
  */
-class Sns extends AbstractParser
+class Bfs extends AbstractParser
 {
     /**
      * Test if the document is an SNS document
@@ -27,7 +27,6 @@ class Sns extends AbstractParser
      */
     public function accept($text)
     {
-      var_dump("foo");
       return true;
     }
 }
