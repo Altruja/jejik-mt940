@@ -34,7 +34,8 @@ class Reader
         'ING'      => 'Jejik\MT940\Parser\Ing',
         'Rabobank' => 'Jejik\MT940\Parser\Rabobank',
         'Sns'      => 'Jejik\MT940\Parser\Sns',
-        'Triodos'  => 'Jejik\MT940\Parser\Triodos'
+        'Triodos'  => 'Jejik\MT940\Parser\Triodos',
+        'BFS'      => 'Jejik\MT940\Parser\BFS'
     );
 
     /**
