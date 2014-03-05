@@ -19,14 +19,14 @@ use Jejik\MT940\Reader;
  *
  * @author Sander Marechal <s.marechal@jejik.com>
  */
-class IngTest extends \PHPUnit_Framework_TestCase
+class BfsTest extends \PHPUnit_Framework_TestCase
 {
     public $statements = array();
 
     public function setUp()
     {
         $reader = new Reader();
-        $reader->addParser('Ing', 'Jejik\MT940\Parser\Bfs');
+        $reader->addParser('Bfs', 'Jejik\MT940\Parser\Bfs');
         $this->statements = $reader->getStatements(file_get_contents(__DIR__ . '/../Fixture/document/bfs.txt'));
     }
 
@@ -42,11 +42,11 @@ class IngTest extends \PHPUnit_Framework_TestCase
 
     public function testBalance()
     {
-#        $balance = $this->statements[0]->getOpeningBalance();
-#        $this->assertInstanceOf('Jejik\MT940\Balance', $balance);
+        $balance = $this->statements[0]->getOpeningBalance();
+        $this->assertInstanceOf('Jejik\MT940\Balance', $balance);
 #        $this->assertEquals('2010-07-22 00:00:00', $balance->getDate()->format('Y-m-d H:i:s'));
-#        $this->assertEquals('EUR', $balance->getCurrency());
-#        $this->assertEquals(0.0, $balance->getAmount());
+        $this->assertEquals('EUR', $balance->getCurrency());
+        $this->assertEquals(0.0, $balance->getAmount());
     }
 
     public function testTransaction()
